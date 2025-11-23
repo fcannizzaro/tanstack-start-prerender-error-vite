@@ -7,7 +7,37 @@
   bun run build
 ```
 
-## Expected error
+## Expected error (using `nitro/vite`)
+
+```bash
+vite v7.2.4 building client environment for production...
+✓ 134 modules transformed.
+.output/public/assets/styles-w5YlNnUM.css    4.84 kB │ gzip:  1.63 kB
+.output/public/assets/index-DrV0IeoS.js      0.11 kB │ gzip:  0.13 kB
+.output/public/assets/main-CSYIZnuT.js     301.71 kB │ gzip: 95.91 kB
+✓ built in 893ms
+vite v7.2.4 building ssr environment for production...
+✓ 39 modules transformed.
+node_modules/.nitro/vite/services/ssr/assets/styles-w5YlNnUM.css                      4.84 kB
+node_modules/.nitro/vite/services/ssr/assets/start-HYkvq4Ni.js                        0.06 kB
+node_modules/.nitro/vite/services/ssr/assets/index-CcIeYgG-.js                        0.15 kB
+node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-C1R-ln6O.js   0.47 kB
+node_modules/.nitro/vite/services/ssr/assets/router-DBGQaaa-.js                       1.50 kB
+node_modules/.nitro/vite/services/ssr/server.js                                      24.21 kB
+✓ built in 66ms
+[prerender] Prerendering pages...
+error during build:
+Error: Failed to start the Vite preview server for prerendering
+    at startPreviewServer (file:///path/to/build-error-with-nitro/node_modules/@tanstack/start-plugin-core/dist/esm/prerender.js:195:11)
+    at async prerender (file:///path/to/build-error-with-nitro/node_modules/@tanstack/start-plugin-core/dist/esm/prerender.js:42:25)
+    at async postServerBuild (file:///path/to/build-error-with-nitro/node_modules/@tanstack/start-plugin-core/dist/esm/post-server-build.js:38:5)
+    at async BasicMinimalPluginContext.handler (file:///path/to/build-error-with-nitro/node_modules/@tanstack/start-plugin-core/dist/esm/plugin.js:267:11)
+    at async Object.buildApp (file:///path/to/build-error-with-nitro/node_modules/vite/dist/node/chunks/config.js:34542:5)
+    at async CAC.<anonymous> (file:///path/to/build-error-with-nitro/node_modules/vite/dist/node/cli.js:629:3)
+error: script "build" exited with code 1
+```
+
+## Expected error (using `@tanstack/nitro-v2-vite-plugin`)
 
 ```bash
 vite v7.2.4 building ssr environment for production...
